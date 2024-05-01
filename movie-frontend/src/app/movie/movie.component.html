@@ -1,0 +1,11 @@
+<h2>Movie List</h2>
+
+<ul>
+  <li *ngFor="let movie of moviesList" class="movie-card">
+    <h3>{{ movie.title }}</h3>
+    <p>Release Year: {{ movie.releaseYear }}</p>
+    <p>Genre: {{ movie.genre }}</p>
+    <button [routerLink]="['/movies', movie.id, 'review']" class="post-review-button">Post Review</button>
+  </li>
+
+</ul>
