@@ -1,11 +1,41 @@
-<h2>Movie List</h2>
+<div class="container">
+  <input type="text" [(ngModel)]="searchQuery" (input)="searchMovies()" placeholder="Search movies..." class="search-input">
+</div>
 
-<ul>
-  <li *ngFor="let movie of moviesList" class="movie-card">
-    <h3>{{ movie.title }}</h3>
-    <p>Release Year: {{ movie.releaseYear }}</p>
-    <p>Genre: {{ movie.genre }}</p>
-    <button [routerLink]="['/movies', movie.id, 'review']" class="post-review-button">Post Review</button>
-  </li>
+<div class="movie-list">
+  <div *ngIf="searchQuery" class="filtered-movies">
+    <h3>Filtered Movies</h3>
+    <ul>
+      <li *ngFor="let movie of filteredMoviesList" class="movie-item">
+        <div class="movie-card">
+          <div class="movie-info">
+            <div class="movie-title">{{ movie.title }}</div>
+            <div class="movie-details">
+              <span class="release-year">Release Year: {{ movie.releaseYear }}</span>
+              <span class="genre">Genre: {{ movie.genre }}</span>
+            </div>
+          </div>
+          <button class="post-review-button">Post Review</button>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-</ul>
+  <div *ngIf="!searchQuery" class="all-movies">
+    <h3>All Movies</h3>
+    <ul>
+      <li *ngFor="let movie of moviesList" class="movie-item">
+        <div class="movie-card">
+          <div class="movie-info">
+            <div class="movie-title">{{ movie.title }}</div>
+            <div class="movie-details">
+              <span class="release-year">Release Year: {{ movie.releaseYear }}</span>
+              <span class="genre">Genre: {{ movie.genre }}</span>
+            </div>
+          </div>
+          <button class="post-review-button">Post Review</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
