@@ -1,7 +1,7 @@
 
 
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Review } from './review.entity';
+// import { Review } from './review.entity';
 
 @Entity()
 export class Movie {
@@ -16,6 +16,6 @@ export class Movie {
   @Column()
   genre: string;
 
-  @OneToMany(() => Review, review => review.movie, { nullable: true }) // Set nullable option to true
-  reviews: Review[];
+  // @OneToMany(() => Review, review => review.movie, { nullable: true }) // Set nullable option to true
+  // reviews: Review[];
 }

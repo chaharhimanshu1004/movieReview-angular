@@ -52,7 +52,7 @@ export class MovieService {
 
     const review = new Review();
     review.content = reviewContent;
-    review.movie = movie;
+    // review.movie = movie;
 
     await this.reviewRepository.save(review);
 

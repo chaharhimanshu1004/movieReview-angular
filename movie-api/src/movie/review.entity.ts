@@ -1,6 +1,6 @@
 // review.entity.ts
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
-import { Movie } from './movie.entity';
+// import { Movie } from './movie.entity';
 
 @Entity()
 export class Review {
@@ -10,6 +10,6 @@ export class Review {
   @Column()
   content: string;
 
-  @ManyToOne(() => Movie, movie => movie.reviews, { nullable: true })
-  movie: Movie;
+  // @ManyToOne(() => Movie, movie => movie.reviews, { nullable: true })
+  // movie: Movie;
 }
